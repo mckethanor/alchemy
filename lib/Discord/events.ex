@@ -204,6 +204,11 @@ defmodule Alchemy.Discord.Events do
     {:voice_state_update, [to_struct(voice, VoiceState)]}
   end
 
+  def handle("SPEAKING_START", speech) do
+    # Guilds.update_voice_state(voice)
+    {:speaking_start, [to_struct(speech, Speaking)]}
+  end
+
   def handle(_, _) do
     {:unkown, []}
   end

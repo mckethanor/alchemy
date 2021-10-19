@@ -486,6 +486,10 @@ defmodule Alchemy.Events do
     handle(:voice_state_update, func)
   end
 
+  defmacro on_speaking_start(func) do
+    handle(:speaking_start, func)
+  end
+
   @doc """
   Registers a handle triggering whenever a shard receives a
   READY event.
